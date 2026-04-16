@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>ODS na Escola | Projeto Paraná Sustentável</title>
+  <!-- CSS unificado (style.css) -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="index-page">
+  <div class="container">
+    <!-- Cabeçalho com paleta ODS ONU (azul) -->
+    <div class="header">
+      <h1>🌍 ODS na Escola <span style="font-weight: normal;">#ParanáSustentável</span></h1>
+      <p>Projeto interdisciplinar para o Ensino Médio da rede pública estadual | Conectando juventude, cidadania e a
+        Agenda 2030 da ONU</p>
+    </div>
+
+    <!-- Barra de acessibilidade (mesmos IDs usados no script.js) -->
+    <div class="access-bar">
+      <button class="access-btn" id="increaseFontBtn" aria-label="Aumentar tamanho da fonte">🔠 A+ Aumentar
+        fonte</button>
+      <button class="access-btn" id="decreaseFontBtn" aria-label="Diminuir tamanho da fonte">🔡 A- Diminuir
+        fonte</button>
+      <button class="access-btn speech" id="readPageBtn" aria-label="Ler conteúdo da página em voz alta">🔊 Ler
+        página</button>
+      <button class="access-btn secondary" id="stopSpeechBtn" aria-label="Parar leitura">⏹️ Parar leitura</button>
+    </div>
+
+    <!-- Sistema de abas (tabs) -->
+    <div class="tab-buttons">
+      <button class="access-btn active-tab" data-tab="onu" onclick="location.href='index.html'">🌐 A ONU e os
+        ODS</button>
+      <button class="access-btn" data-tab="ods2" onclick="location.href='pages/fome_zero.html'">🌾 ODS 2 · Fome
+        Zero</button>
+      <button class="access-btn" data-tab="ods4" onclick="location.href='pages/educacao_de_qualidade.html'">📚 ODS 4 ·
+        Educação de Qualidade</button>
+      <button class="access-btn" data-tab="ods13" onclick="location.href='pages/mudanca_global_do_clima.html'">🌎 ODS
+        13 ·
+        Ação Climática
+      </button>
+    </div>
+
+    <div class="tab-contents">
+      <!-- ABA 1: Aprofundamento ONU + resumo dos projetos -->
+      <div class="tab-content active" id="tab-onu">
+        <div class="card">
+          <h2>📌 A Organização das Nações Unidas e o Desenvolvimento Sustentável</h2>
+          <div class="readable">
+            <p>A <strong>Organização das Nações Unidas (ONU)</strong> é uma organização internacional fundada em 1945,
+              após a Segunda Guerra Mundial, com o objetivo de promover a paz, a cooperação entre os países e o
+              desenvolvimento social e econômico global. Em 2015, todos os Estados-membros da ONU adotaram a
+              <strong>Agenda 2030 para o Desenvolvimento Sustentável</strong>, um plano de ação ambicioso que contém
+              <strong>17 Objetivos de Desenvolvimento Sustentável (ODS)</strong> e 169 metas integradas.
+            </p>
+            <p>Os ODS abrangem dimensões essenciais: <strong>social</strong> (fome, saúde, educação),
+              <strong>econômica</strong> (trabalho decente, inovação) e <strong>ambiental</strong> (clima, consumo
+              sustentável). A ideia é que nenhum país seja deixado para trás, com foco especial em comunidades
+              vulneráveis. No Brasil, o compromisso com a Agenda 2030 envolve governos, empresas, escolas e sociedade
+              civil. No <strong>Paraná</strong>, a rede pública estadual tem incorporado os ODS em projetos pedagógicos,
+              incentivando o protagonismo juvenil para transformar a realidade local.
+            </p>
+            <div class="highlight">
+              <strong>🎯 Por que isso importa para sua escola?</strong> Ao trabalhar os ODS em sala de aula, os jovens
+              desenvolvem pensamento crítico, empatia, senso de urgência climática e habilidades para construir uma
+              sociedade mais justa. Cada ação dentro do colégio – da horta à campanha contra o desperdício – é um passo
+              real rumo às metas globais.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>📖 Resumo dos projetos pedagógicos (materiais anexos)</h2>
+          <p>Com base nos três projetos completos disponíveis (Educação de Qualidade, Fome Zero e Agricultura
+            Sustentável, Ação contra a Mudança Global do Clima), desenvolvemos ações práticas para diferentes séries do
+            ensino médio. Confira os destaques:</p>
+          <div class="resumo-grid">
+            <div class="resumo-card-mini">
+              <h4>📘 ODS 4 · Educação de Qualidade</h4>
+              <p><strong>Turma:</strong> 2º ano EM<br>
+                <strong>Projeto:</strong> "Jovem Protagonista" – diagnóstico participativo, monitoria entre alunos,
+                feira de talentos digital e campanha anti-evasão.<br>
+                <strong>Integração:</strong> Matemática (estatística), Português (argumentação), Sociologia.
+              </p>
+              <button class="access-btn small-tab-btn" data-tab="ods4">Ver detalhes na aba</button>
+            </div>
+            <div class="resumo-card-mini">
+              <h4>🌽 ODS 2 · Fome Zero</h4>
+              <p><strong>Turma:</strong> 3º ano EM<br>
+                <strong>Projeto:</strong> "Cultivando o Futuro" – horta agroecológica, diagnóstico do desperdício, feira
+                de sementes, roda com agricultores familiares.<br>
+                <strong>Integração:</strong> Biologia (compostagem), Geografia (estrutura fundiária).
+              </p>
+              <button class="access-btn small-tab-btn" data-tab="ods2">Ver detalhes na aba</button>
+            </div>
+            <div class="resumo-card-mini">
+              <h4>🌿 ODS 13 · Ação Climática</h4>
+              <p><strong>Turma:</strong> 1º ano EM<br>
+                <strong>Projeto:</strong> "EcoAção Paraná" – pegada de carbono da escola, mutirão de árvores nativas,
+                gincana da reciclagem, desafio #EcoAção.<br>
+                <strong>Integração:</strong> Biologia, Geografia, Matemática (gráficos).
+              </p>
+              <button class="access-btn small-tab-btn" data-tab="ods13">Ver detalhes na aba</button>
+            </div>
+          </div>
+          <p class="readable" style="margin-top: 0.5rem;">🔗 Cada projeto completo está disponível em arquivo próprio
+            (clique nas abas acima para ver resumo expandido e acessar os materiais multimídia). Todos os projetos
+            incluem vídeos, documentários e atividades interdisciplinares adaptadas à realidade das escolas públicas do
+            Paraná.</p>
+        </div>
+      </div>
+
+
+      <!-- ABA 3: ODS 2 Fome Zero e Agricultura Sustentável -->
+      <div class="tab-content" id="tab-ods2">
+        <div class="card">
+          <h2>🥗 ODS 2 · Fome Zero – Projeto "Cultivando o Futuro"</h2>
+          <div class="readable">
+            <p>Conteúdo baseado no arquivo <strong>fome_zero</strong>. Destinado ao <strong>3º ano do Ensino
+                Médio</strong>, o projeto mobiliza estudantes para discutir segurança alimentar, desperdício e
+              agricultura sustentável, com ações dentro da escola e na comunidade.</p>
+            <div class="highlight">
+              <strong>🌾 Dados locais:</strong> No Paraná, 12% dos domicílios já reduziram a quantidade de alimentos,
+              enquanto o estado é líder nacional em produção de grãos. O desafio é conectar a produção ao combate à fome
+              com práticas agroecológicas.
+            </div>
+            <h3>🌱 Atividades práticas</h3>
+            <ul>
+              <li><strong>Diagnóstico da merenda:</strong> Pesagem do resto de comida e plano para reduzir perdas.</li>
+              <li><strong>Horta agroecológica escolar:</strong> Plantio de hortaliças, temperos e frutíferas nativas
+                (pitanga, araçá) com compostagem.</li>
+              <li><strong>Campanha “Comida não é lixo”:</strong> Arrecadação de alimentos e conscientização sobre
+                aproveitamento integral.</li>
+              <li><strong>Feira de troca de sementes crioulas e receitas saudáveis.</strong></li>
+              <li><strong>Roda de conversa com agricultores familiares e cooperativas do Paraná.</strong></li>
+            </ul>
+            <h3>📖 Integração disciplinar</h3>
+            <div class="subjects-mini">
+              <span>Biologia (solo, compostagem)</span>
+              <span>Geografia (êxodo rural, matriz agrícola)</span>
+              <span>Matemática (estatística de desperdício)</span>
+              <span>Sociologia (fome como questão política)</span>
+              <span>Português (roteiros de campanha)</span>
+            </div>
+            <h3>🎬 Vídeos recomendados</h3>
+            <div class="video-mini-list">
+              <a href="https://www.youtube.com/embed/9nJt6nHmE6Q" target="_blank">📘 ODS 2 – ONU</a>
+              <a href="https://www.youtube.com/embed/1Z2n9Xv7y8A" target="_blank">🌿 Agricultura Sustentável</a>
+              <a href="https://www.youtube.com/embed/7V8oP4c2qZw" target="_blank">💡 TED – Acabar com desperdício</a>
+            </div>
+            <p style="margin-top: 1rem;">⭐ <strong>Resultado esperado:</strong> Redução do desperdício, horta produtiva
+              e fortalecimento da agricultura familiar.</p>
+            <a href="pages/fome_zero.html" class="access-btn btn-projeto">📄 Ver projeto completo (ODS 2)</a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ABA 2: ODS 4 Educação de Qualidade (resumo do anexo) -->
+      <div class="tab-content" id="tab-ods4">
+        <div class="card">
+          <h2>🎓 ODS 4 · Educação de Qualidade – Projeto "Jovem Protagonista"</h2>
+          <div class="readable">
+            <p>Baseado no documento <strong>educacao_de_qualidade</strong>, este projeto é voltado para alunos do
+              <strong>2º ano do Ensino Médio</strong> (15 a 17 anos). O objetivo é transformar a escola em um espaço de
+              inclusão, inovação e combate à evasão escolar, valorizando o protagonismo jovem e o uso da tecnologia.
+            </p>
+            <div class="highlight">
+              <strong>📍 Contexto Paraná:</strong> 11% dos jovens entre 15 e 17 anos ainda estão fora da escola, e a
+              falta de conectividade e desinteresse pela grade tradicional são desafios reais. O projeto propõe ações
+              concretas para reverter esse quadro.
+            </div>
+            <h3>🧩 Atividades principais</h3>
+            <ul>
+              <li><strong>Diagnóstico participativo:</strong> Alunos aplicam questionários sobre dificuldades de
+                aprendizagem e desmotivação.</li>
+              <li><strong>Círculos de tutoria:</strong> Monitoria voluntária em matemática, português e ciências.</li>
+              <li><strong>Feira de talentos digitais:</strong> Criação de blogs, podcasts ou redes educativas.</li>
+              <li><strong>Campanha “Fica Comigo, Estuda!”:</strong> Mutirão de conscientização sobre a importância de
+                concluir o ensino médio.</li>
+              <li><strong>Conexão com outros ODS:</strong> Debate sobre impacto da educação no trabalho decente (ODS 8)
+                e redução das desigualdades (ODS 10).</li>
+            </ul>
+            <h3>📚 Integração curricular</h3>
+            <div class="subjects-mini">
+              <span>Matemática (estatística)</span>
+              <span>Língua Portuguesa (reportagens)</span>
+              <span>Geografia (desenvolvimento regional)</span>
+              <span>Sociologia (cidadania)</span>
+              <span>Arte (cartazes digitais)</span>
+            </div>
+            <h3>🎥 Vídeos de apoio (destaques)</h3>
+            <div class="video-mini-list">
+              <a href="https://www.youtube.com/embed/htHKPh9LQYo" target="_blank">📘 ODS 4 – UNESCO</a>
+              <a href="https://www.youtube.com/embed/uo8vZx9DPXk" target="_blank">🎬 Educação que Transforma</a>
+              <a href="https://www.youtube.com/embed/6M_w9ZN-kW4" target="_blank">💡 TED – Tecnologia na escola
+                pública</a>
+            </div>
+            <p style="margin-top: 1rem;">⭐ <strong>Resultado esperado:</strong> Redução da evasão, fortalecimento da
+              identidade escolar e engajamento cidadão.</p>
+            <a href="pages/educacao_de_qualidade.html" class="access-btn btn-projeto">📄 Acessar projeto completo
+              (página original)</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ABA 4: ODS 13 Ação contra a Mudança Global do Clima -->
+      <div class="tab-content" id="tab-ods13">
+        <div class="card">
+          <h2>🌿 ODS 13 · Ação Climática – Projeto "EcoAção Paraná"</h2>
+          <div class="readable">
+            <p>Baseado em <strong>mudanca_global_do_clima</strong>. Focado no <strong>1º ano do Ensino
+                Médio</strong>, o projeto engaja os jovens no diagnóstico da pegada de carbono escolar e em ações de
+              mitigação, adaptação e conscientização sobre a emergência climática.</p>
+            <div class="highlight">
+              <strong>⛈️ Realidade paranaense:</strong> Enchentes na RMC, secas no Oeste e geadas fora de época afetam a
+              agricultura e a vida nas cidades. A escola pode ser um laboratório de soluções sustentáveis.
+            </div>
+            <h3>♻️ Atividades sugeridas</h3>
+            <ul>
+              <li><strong>Diagnóstico da pegada de carbono:</strong> Levantamento de energia, água, resíduos e
+                transporte na escola.</li>
+              <li><strong>Mutirão de plantio de árvores nativas (Mata Atlântica).</strong></li>
+              <li><strong>Campanha “Desligue pra Salvar”:</strong> redução de consumo elétrico e combate ao desperdício.
+              </li>
+              <li><strong>Gincana da reciclagem:</strong> coleta seletiva e destinação para cooperativas.</li>
+              <li><strong>Desafio #EcoAção nas redes:</strong> vídeos de até 1 minuto com ações sustentáveis.</li>
+            </ul>
+            <h3>📚 Integração com disciplinas</h3>
+            <div class="subjects-mini">
+              <span>Biologia (ciclos biogeoquímicos)</span>
+              <span>Geografia (desastres naturais, matriz energética)</span>
+              <span>Matemática (cálculo de emissões)</span>
+              <span>Português (campanhas)</span>
+              <span>Arte (intervenções com recicláveis)</span>
+            </div>
+            <h3>🎥 Materiais multimídia</h3>
+            <div class="video-mini-list">
+              <a href="https://www.youtube.com/embed/owf1Q07LwR0" target="_blank">🌎 ODS 13 – ONU explica</a>
+              <a href="https://www.youtube.com/embed/G4H1N_yXBiA" target="_blank">📽️ Documentário DW Brasil</a>
+              <a href="https://www.youtube.com/embed/J_3T2rUnHrM" target="_blank">🏫 Escolas Sustentáveis</a>
+            </div>
+            <p style="margin-top: 1rem;">⭐ <strong>Resultado esperado:</strong> Escola mais sustentável, jovens
+              multiplicadores de boas práticas e redução da pegada ecológica.</p>
+            <a href="pages/mudanca_global_do_clima.html" class="access-btn btn-projeto">📄 Acessar projeto completo
+              (ODS
+              13)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>🌱 Projeto desenvolvido para escolas públicas do Estado do Paraná | Alinhado à Agenda 2030 da ONU e aos
+        Objetivos de Desenvolvimento Sustentável</p>
+      <p>🔊 Acessibilidade ativa: ajuste de fonte e leitura de tela (síntese de voz) | #EducaçãoParaODS
+        #JovensProtagonistas</p>
+    </footer>
+  </div>
+
+  <!-- Script unificado (acessibilidade, leitura e abas) -->
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>
