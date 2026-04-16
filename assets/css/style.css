@@ -1,0 +1,926 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== TEMA PADRÃO (ONU) ===== */
+body {
+  font-family: 'Segoe UI', 'Poppins', system-ui, -apple-system, 'Roboto', sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+  line-height: 1.5;
+  transition: all 0.2s ease;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 3rem;
+}
+
+/* cabeçalho - gradiente azul ONU */
+.header {
+  background: linear-gradient(135deg, #003366, #005a8c);
+  color: white;
+  padding: 2rem 1rem;
+  border-radius: 2rem 2rem 2rem 0;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 51, 102, 0.2);
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+}
+
+.header p {
+  font-size: 1.1rem;
+  opacity: 0.92;
+}
+
+/* barra de acessibilidade */
+.access-bar {
+  background: #e0f2fe;
+  padding: 0.75rem 1rem;
+  border-radius: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.access-btn {
+  background: #003366;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1.2rem;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.access-btn:hover {
+  background: #002244;
+  transform: scale(0.97);
+}
+
+.access-btn.secondary {
+  background: #2c5e46;
+}
+
+.access-btn.speech {
+  background: #009edb;
+}
+
+/* cards */
+.card {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: 0.2s;
+}
+
+.card h2 {
+  color: #003366;
+  border-left: 7px solid #009edb;
+  padding-left: 1rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.8rem;
+}
+
+.card h3 {
+  color: #005a8c;
+  margin: 1rem 0 0.5rem;
+}
+
+.highlight {
+  background: #e6f2fc;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-left: 4px solid #009edb;
+}
+
+/* listas */
+.objectives-list,
+.readable ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.activity,
+.subject {
+  margin-bottom: 1rem;
+}
+
+.activity h3,
+.subject h3 {
+  margin-top: 0;
+}
+
+.subjects-mini {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.subjects-mini span {
+  background: #eef2fa;
+  padding: 0.4rem 0.8rem;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+}
+
+/* vídeos responsivos */
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.video-item {
+  flex: 1 1 300px;
+  background: #f4faf6;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.video-item iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+}
+
+.video-item p {
+  padding: 0.8rem;
+  font-weight: 500;
+  background: white;
+}
+
+/* ===== ESTILOS PARA VÍDEOS LOCAIS ===== */
+.video-item.local-video {
+  background: #1a1a2e;
+}
+
+.video-item.local-video video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  outline: none;
+}
+
+.video-item.local-video video:focus {
+  outline: none;
+}
+
+.video-controls {
+  padding: 0.5rem 0.8rem;
+  background: #2d2d44;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.fullscreen-btn {
+  background: #003366;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.fullscreen-btn:hover {
+  background: #002244;
+  transform: scale(0.97);
+}
+
+/* Modo tela cheia para vídeos locais */
+.video-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-fullscreen video {
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+}
+
+.video-fullscreen .video-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 30px;
+  padding: 0.5rem 1rem;
+}
+
+.video-fullscreen .fullscreen-btn {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.video-fullscreen .fullscreen-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* rodapé */
+.footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #cce6db;
+  font-size: 0.85rem;
+  color: #2c6b4b;
+}
+
+/* responsividade */
+@media (max-width: 680px) {
+  .container {
+    padding: 0.8rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .video-controls {
+    padding: 0.3rem 0.5rem;
+  }
+
+  .fullscreen-btn {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* classes de controle de fonte via JS */
+body.font-small {
+  font-size: 14px;
+}
+
+body.font-large {
+  font-size: 20px;
+}
+
+body.font-xlarge {
+  font-size: 24px;
+}
+
+.readable-text {
+  transition: all 0.1s;
+}
+
+/* ===== ESTILOS EXCLUSIVOS PARA index.html (abas, resumo, etc.) ===== */
+body.index-page .tab-buttons button.active-tab {
+  background: #003366;
+  color: white;
+  border-bottom: 3px solid #ffcd3c;
+}
+
+body.index-page .tab-content {
+  animation: fadeEffect 0.3s;
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+body.index-page .video-mini-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+body.index-page .video-mini-list a {
+  background: #eef2fa;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #003366;
+}
+
+body.index-page .video-mini-list a:hover {
+  background: #cbdde9;
+  transform: scale(0.98);
+}
+
+.resumo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.resumo-card-mini {
+  background: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  flex: 1 1 200px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-top: 4px solid #009edb;
+}
+
+.resumo-card-mini h4 {
+  margin: 0 0 0.5rem;
+  color: #003366;
+}
+
+/* botões pequenos dentro dos cards de resumo */
+.small-tab-btn {
+  background: #005a8c;
+  margin-top: 8px;
+}
+
+.small-tab-btn:hover {
+  background: #003366;
+}
+
+/* botões de acesso ao projeto completo */
+.btn-projeto {
+  display: inline-block;
+  text-decoration: none;
+  background: #009edb;
+  margin-top: 0.5rem;
+}
+
+.btn-projeto:hover {
+  background: #0077b3;
+}
+
+/* ========== TEMA ODS 2 – FOME ZERO E AGRICULTURA SUSTENTÁVEL (original, para o arquivo fome_zero.html) ========== */
+body.ods2 {
+  background: #FFF8E1;
+  color: #3E2723;
+}
+
+body.ods2 .header {
+  background: linear-gradient(135deg, #DDA63A, #F4A300);
+  box-shadow: 0 8px 20px rgba(221, 166, 58, 0.3);
+}
+
+body.ods2 .access-bar {
+  background: #FCE4B2;
+}
+
+body.ods2 .access-btn {
+  background: #C57F1E;
+}
+
+body.ods2 .access-btn:hover {
+  background: #A56610;
+}
+
+body.ods2 .access-btn.secondary {
+  background: #9C6E1B;
+}
+
+body.ods2 .access-btn.speech {
+  background: #D98E2B;
+}
+
+body.ods2 .card h2 {
+  color: #B26B00;
+  border-left-color: #F4A300;
+}
+
+body.ods2 .card h3 {
+  color: #C57F1E;
+}
+
+body.ods2 .highlight {
+  background: #FFEFC0;
+  border-left-color: #F4A300;
+}
+
+body.ods2 .subjects-mini span {
+  background: #FFE0A3;
+}
+
+body.ods2 .video-item {
+  background: #FFF2D7;
+}
+
+body.ods2 .footer {
+  border-top-color: #F4D03F;
+  color: #6B4C1A;
+}
+
+/* ========== NOVAS REGRAS PARA A BARRA DE ABAS NO fome_zero.html (PALETA ODS 2) ========== */
+/* Apenas o botão ativo (ODS 2) segue a paleta do tema; os demais mantêm o estilo padrão azul ONU */
+body.ods2 .tab-buttons .access-btn.active-tab {
+  background: #B26B00;
+  /* dourado escuro */
+  border-bottom: 3px solid #FFD966;
+  color: white;
+}
+
+body.ods2 .tab-buttons .access-btn.active-tab:hover {
+  background: #8A5A00;
+  transform: scale(0.97);
+}
+
+/* ========== AJUSTE ESPECÍFICO: botão "A ONU e os ODS" no fome_zero.html com paleta ONU (azul) ========== */
+body.ods2 .tab-buttons button[data-tab="onu"] {
+  background: #003366;
+  color: white;
+  border-bottom: 2px solid #009edb;
+}
+
+body.ods2 .tab-buttons button[data-tab="onu"]:hover {
+  background: #002244;
+  transform: scale(0.97);
+}
+
+/* ========== AJUSTE DO BOTÃO ODS 4 DENTRO DO fome_zero.html – PALETA ODS 4 ========== */
+body.ods2 .tab-buttons button[data-tab="ods4"] {
+  background: #C31F33;
+  color: #FFFFFF;
+  border-bottom: 2px solid #E05A5A;
+}
+
+body.ods2 .tab-buttons button[data-tab="ods4"]:hover {
+  background: #8A1525;
+  color: white;
+  transform: scale(0.97);
+}
+
+/* ========== AJUSTE DO BOTÃO ODS 13 DENTRO DO fome_zero.html – PALETA ODS 13 ========== */
+body.ods2 .tab-buttons button[data-tab="ods13"] {
+  background: #4C9F38;
+  color: #FFFFFF;
+  border-bottom: 2px solid #7CB342;
+}
+
+body.ods2 .tab-buttons button[data-tab="ods13"]:hover {
+  background: #3F7E44;
+  color: white;
+  transform: scale(0.97);
+}
+
+/* ========== AJUSTES EXCLUSIVOS PARA O BOTÃO E A ABA ODS 2 DENTRO DO index.html (não afetam fome_zero.html) ========== */
+/* Botão da aba ODS 2 no index.html (sempre com a paleta do tema) */
+body.index-page .tab-buttons button[data-tab="ods2"] {
+  background: #DDA63A;
+  color: #3E2723;
+  border-bottom: 2px solid #F4A300;
+}
+
+body.index-page .tab-buttons button[data-tab="ods2"]:hover {
+  background: #C57F1E;
+  color: white;
+}
+
+/* Botão ativo da aba ODS 2 no index.html */
+body.index-page .tab-buttons button.active-tab[data-tab="ods2"] {
+  background: #B26B00;
+  color: white;
+  border-bottom: 3px solid #FFD966;
+}
+
+/* Conteúdo da aba ODS 2 no index.html */
+body.index-page #tab-ods2 .card {
+  background: #FFF8E1;
+}
+
+body.index-page #tab-ods2 .card h2 {
+  color: #B26B00;
+  border-left-color: #F4A300;
+}
+
+body.index-page #tab-ods2 .card h3 {
+  color: #C57F1E;
+}
+
+body.index-page #tab-ods2 .highlight {
+  background: #FFEFC0;
+  border-left-color: #F4A300;
+  color: #3E2723;
+}
+
+body.index-page #tab-ods2 .subjects-mini span {
+  background: #FFE0A3;
+  color: #3E2723;
+}
+
+body.index-page #tab-ods2 .video-mini-list a {
+  background: #FFE0A3;
+  color: #B26B00;
+}
+
+body.index-page #tab-ods2 .video-mini-list a:hover {
+  background: #F4C542;
+}
+
+body.index-page #tab-ods2 .btn-projeto {
+  background: #C57F1E;
+}
+
+body.index-page #tab-ods2 .btn-projeto:hover {
+  background: #A56610;
+}
+
+body.index-page #tab-ods2 .access-btn.small-tab-btn {
+  background: #C57F1E;
+}
+
+body.index-page #tab-ods2 .access-btn.small-tab-btn:hover {
+  background: #A56610;
+}
+
+/* ========== TEMA ODS 4 – EDUCAÇÃO DE QUALIDADE ========== */
+body.ods4 {
+  background: #FDF2F2;
+  color: #2D1A1A;
+}
+
+body.ods4 .header {
+  background: linear-gradient(135deg, #C31F33, #8A1525);
+  box-shadow: 0 8px 20px rgba(195, 31, 51, 0.3);
+}
+
+body.ods4 .access-bar {
+  background: #FCE4E4;
+}
+
+body.ods4 .access-btn {
+  background: #C31F33;
+}
+
+body.ods4 .access-btn:hover {
+  background: #8A1525;
+}
+
+body.ods4 .access-btn.secondary {
+  background: #8A1525;
+}
+
+body.ods4 .access-btn.speech {
+  background: #C31F33;
+}
+
+body.ods4 .card h2 {
+  color: #C31F33;
+  border-left-color: #C31F33;
+}
+
+body.ods4 .card h3 {
+  color: #8A1525;
+}
+
+body.ods4 .highlight {
+  background: #FCE4E4;
+  border-left-color: #C31F33;
+}
+
+body.ods4 .subjects-mini span {
+  background: #FCE4E4;
+}
+
+body.ods4 .video-item {
+  background: #FFF2F2;
+}
+
+body.ods4 .footer {
+  border-top-color: #E6B8B8;
+  color: #6B3F3F;
+}
+
+/* ========== AJUSTES EXCLUSIVOS PARA O BOTÃO E A ABA ODS 4 DENTRO DO index.html ========== */
+/* Botão da aba ODS 4 no index.html (estilo inativo) */
+body.index-page .tab-buttons button[data-tab="ods4"] {
+  background: #C31F33;
+  color: #FFFFFF;
+  border-bottom: 2px solid #E05A5A;
+}
+
+body.index-page .tab-buttons button[data-tab="ods4"]:hover {
+  background: #8A1525;
+  color: white;
+}
+
+/* Botão ativo da aba ODS 4 no index.html */
+body.index-page .tab-buttons button.active-tab[data-tab="ods4"] {
+  background: #8A1525;
+  color: white;
+  border-bottom: 3px solid #FFB3B3;
+}
+
+/* Conteúdo da aba ODS 4 no index.html */
+body.index-page #tab-ods4 .card {
+  background: #FDF2F2;
+}
+
+body.index-page #tab-ods4 .card h2 {
+  color: #C31F33;
+  border-left-color: #C31F33;
+}
+
+body.index-page #tab-ods4 .card h3 {
+  color: #8A1525;
+}
+
+body.index-page #tab-ods4 .highlight {
+  background: #FCE4E4;
+  border-left-color: #C31F33;
+  color: #2D1A1A;
+}
+
+body.index-page #tab-ods4 .subjects-mini span {
+  background: #FCE4E4;
+  color: #2D1A1A;
+}
+
+body.index-page #tab-ods4 .video-mini-list a {
+  background: #FCE4E4;
+  color: #C31F33;
+}
+
+body.index-page #tab-ods4 .video-mini-list a:hover {
+  background: #F5C2C2;
+}
+
+body.index-page #tab-ods4 .btn-projeto {
+  background: #C31F33;
+}
+
+body.index-page #tab-ods4 .btn-projeto:hover {
+  background: #8A1525;
+}
+
+body.index-page #tab-ods4 .access-btn.small-tab-btn {
+  background: #C31F33;
+}
+
+body.index-page #tab-ods4 .access-btn.small-tab-btn:hover {
+  background: #8A1525;
+}
+
+/* ========== TEMA ODS 13 – AÇÃO CONTRA A MUDANÇA GLOBAL DO CLIMA ========== */
+body.ods13 {
+  background: #F0F9EC;
+  color: #1E3A1F;
+}
+
+body.ods13 .header {
+  background: linear-gradient(135deg, #4C9F38, #3F7E44);
+  box-shadow: 0 8px 20px rgba(76, 159, 56, 0.3);
+}
+
+body.ods13 .access-bar {
+  background: #E2F3DC;
+}
+
+body.ods13 .access-btn {
+  background: #4C9F38;
+}
+
+body.ods13 .access-btn:hover {
+  background: #3F7E44;
+}
+
+body.ods13 .access-btn.secondary {
+  background: #3F7E44;
+}
+
+body.ods13 .access-btn.speech {
+  background: #4C9F38;
+}
+
+body.ods13 .card h2 {
+  color: #4C9F38;
+  border-left-color: #4C9F38;
+}
+
+body.ods13 .card h3 {
+  color: #3F7E44;
+}
+
+body.ods13 .highlight {
+  background: #E2F3DC;
+  border-left-color: #4C9F38;
+}
+
+body.ods13 .subjects-mini span {
+  background: #E2F3DC;
+}
+
+body.ods13 .video-item {
+  background: #F4F9F0;
+}
+
+body.ods13 .footer {
+  border-top-color: #C8E2BC;
+  color: #3F7E44;
+}
+
+/* ========== AJUSTES EXCLUSIVOS PARA O BOTÃO E A ABA ODS 13 DENTRO DO index.html ========== */
+/* Botão da aba ODS 13 no index.html (estilo inativo) */
+body.index-page .tab-buttons button[data-tab="ods13"] {
+  background: #4C9F38;
+  color: #1E3A1F;
+  border-bottom: 2px solid #7CB342;
+}
+
+body.index-page .tab-buttons button[data-tab="ods13"]:hover {
+  background: #3F7E44;
+  color: white;
+}
+
+/* Botão ativo da aba ODS 13 no index.html */
+body.index-page .tab-buttons button.active-tab[data-tab="ods13"] {
+  background: #3F7E44;
+  color: white;
+  border-bottom: 3px solid #AED581;
+}
+
+/* Conteúdo da aba ODS 13 no index.html */
+body.index-page #tab-ods13 .card {
+  background: #F0F9EC;
+}
+
+body.index-page #tab-ods13 .card h2 {
+  color: #4C9F38;
+  border-left-color: #4C9F38;
+}
+
+body.index-page #tab-ods13 .card h3 {
+  color: #3F7E44;
+}
+
+body.index-page #tab-ods13 .highlight {
+  background: #E2F3DC;
+  border-left-color: #4C9F38;
+  color: #1E3A1F;
+}
+
+body.index-page #tab-ods13 .subjects-mini span {
+  background: #E2F3DC;
+  color: #1E3A1F;
+}
+
+body.index-page #tab-ods13 .video-mini-list a {
+  background: #E2F3DC;
+  color: #4C9F38;
+}
+
+body.index-page #tab-ods13 .video-mini-list a:hover {
+  background: #C8E2BC;
+}
+
+body.index-page #tab-ods13 .btn-projeto {
+  background: #4C9F38;
+}
+
+body.index-page #tab-ods13 .btn-projeto:hover {
+  background: #3F7E44;
+}
+
+body.index-page #tab-ods13 .access-btn.small-tab-btn {
+  background: #4C9F38;
+}
+
+body.index-page #tab-ods13 .access-btn.small-tab-btn:hover {
+  background: #3F7E44;
+}
+
+/* ========== AJUSTE DO BOTÃO ODS 13 DENTRO DO educacao_de_qualidade.html (body.ods4) – PALETA ODS 13 ========== */
+body.ods4 .tab-buttons button[data-tab="ods13"] {
+  background: #4C9F38;
+  color: #FFFFFF;
+  border-bottom: 2px solid #7CB342;
+}
+
+body.ods4 .tab-buttons button[data-tab="ods13"]:hover {
+  background: #3F7E44;
+  color: white;
+  transform: scale(0.97);
+}
+
+/* ========== AJUSTE DO BOTÃO ODS 2 DENTRO DO educacao_de_qualidade.html (body.ods4) – PALETA ODS 2 ========== */
+body.ods4 .tab-buttons button[data-tab="ods2"] {
+  background: #DDA63A;
+  color: #3E2723;
+  border-bottom: 2px solid #F4A300;
+}
+
+body.ods4 .tab-buttons button[data-tab="ods2"]:hover {
+  background: #C57F1E;
+  color: white;
+  transform: scale(0.97);
+}
+
+/* ========== AJUSTE DO BOTÃO ODS 4 DENTRO DO mudanca_global_do_clima.html (body.ods13) – PALETA ODS 4 ========== */
+/* Garante que o botão "ODS 4 · Educação de Qualidade" no arquivo mudanca_global_do_clima.html (tema ODS13) use a paleta de cores do ODS 4 (vermelho) */
+body.ods13 .tab-buttons button[data-tab="ods4"] {
+  background: #C31F33;
+  color: #FFFFFF;
+  border-bottom: 2px solid #E05A5A;
+}
+
+body.ods13 .tab-buttons button[data-tab="ods4"]:hover {
+  background: #8A1525;
+  color: white;
+  transform: scale(0.97);
+}
+
+/* ========== CORREÇÃO: botão "A ONU e os ODS" (active-tab) no educacao_de_qualidade.html deve ter a paleta do index.html ========== */
+/* Esta regra garante que o botão ativo da ONU mantenha a cor azul ONU com borda amarela, mesmo dentro do tema ODS4 */
+body.ods4 .tab-buttons button.active-tab[data-tab="onu"] {
+  background: #003366 !important;
+  border-bottom: 3px solid #ffcd3c !important;
+  color: white !important;
+}
+
+body.ods4 .tab-buttons button.active-tab[data-tab="onu"]:hover {
+  background: #002244 !important;
+  transform: scale(0.97);
+}
+
+/* ========== CORREÇÃO: botão "A ONU e os ODS" (active-tab) no mudanca_global_do_clima.html (body.ods13) deve ter a paleta do index.html ========== */
+/* Garante que o botão ativo da ONU mantenha a cor azul ONU com borda amarela, mesmo dentro do tema ODS13 */
+body.ods13 .tab-buttons button.active-tab[data-tab="onu"] {
+  background: #003366 !important;
+  border-bottom: 3px solid #ffcd3c !important;
+  color: white !important;
+}
+
+body.ods13 .tab-buttons button.active-tab[data-tab="onu"]:hover {
+  background: #002244 !important;
+  transform: scale(0.97);
+}
+
+/* ========== ESTILO DO BOTÃO ODS 2 NO mudanca_global_do_clima.html (body.ods13) – PALETA ODS 2 ========== */
+/* Garante que o botão "ODS 2 · Fome Zero" no arquivo mudanca_global_do_clima.html (tema ODS13) use a paleta de cores do ODS 2 (dourado) */
+body.ods13 .tab-buttons button.ods2-tab-button {
+  background: #DDA63A;
+  color: #3E2723;
+  border-bottom: 2px solid #F4A300;
+}
+
+body.ods13 .tab-buttons button.ods2-tab-button:hover {
+  background: #C57F1E;
+  color: white;
+  transform: scale(0.97);
+}
+
+/* ========== AJUSTE DO BOTÃO ODS 2 NO mudanca_global_do_clima.html (body.ods13) – PALETA ODS 2 ========== */
+/* Garante que o botão "ODS 2 · Fome Zero" no arquivo mudanca_global_do_clima.html (tema ODS13) use a paleta de cores do ODS 2 (dourado) */
+body.ods13 .tab-buttons button.ods2-tab-button {
+  background: #DDA63A;
+  color: #3E2723;
+  border-bottom: 2px solid #F4A300;
+}
+
+body.ods13 .tab-buttons button.ods2-tab-button:hover {
+  background: #C57F1E;
+  color: white;
+  transform: scale(0.97);
+}
