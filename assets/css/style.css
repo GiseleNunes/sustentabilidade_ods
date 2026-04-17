@@ -924,3 +924,49 @@ body.ods13 .tab-buttons button.ods2-tab-button:hover {
   color: white;
   transform: scale(0.97);
 }
+
+/* ===== NOVOS ESTILOS PARA A IMAGEM ODS.JPG ===== */
+.ods-image-container {
+  text-align: center;
+  margin: 1.5rem 0;
+  background-color: #f8f9fa;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.ods-full-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+/* Efeito sutil de zoom ao passar o mouse (opcional) */
+.ods-full-image:hover {
+  transform: scale(1.01);
+}
+
+.image-credit {
+  font-size: 0.85rem;
+  color: #6c757d;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .ods-image-container {
+    padding: 0.75rem;
+  }
+
+  .ods-full-image {
+    border-radius: 8px;
+  }
+
+  .image-credit {
+    font-size: 0.75rem;
+  }
+}
